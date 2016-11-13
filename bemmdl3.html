@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BEMMDL2(Bootstrap, Emmet, Modernizr, MDL)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-indigo.min.css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="js.modernizr-custom.js"></script>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+        .mdl-cell {
+            text-align: center;
+            background-color: beige;
+        }
+        .mdl-cell > h2 + p {
+            padding: 2px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+            /*Здесь был .mdl-card { margin: auto; } Но был убран по причине того что действовал на все mdl-card,
+             так как карточка в ачейке сетки становилась немного больше чем 2 крайних от нее блока(по бокам).*/
+        .marginAuto {
+            margin: auto;
+        }
+        /*Два стиля для кнопок снизу карточки*/
+        .mdl-card__actions {
+            display: flex;
+            box-sizing:border-box;
+            align-items: center;
+        }
+        .mdl-card__actions > .mdl-button--icon {
+            margin-right: 3px;
+            margin-left: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-grid"> <!--При добавлении mdl-grid появится вторая полоса прокрутки-->
+    <div class="mdl-layout
+            mdl-js-layout mdl-layout--fixed-header
+            mdl-layout--fixed-tabs">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Leniva</span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="bemmdl.html">Home</a>
+                    <a class="mdl-navigation__link" href="bemmdl2.html">Blog</a>
+                    <a class="mdl-navigation__link" href="bemmdl3.html">About</a>
+                    <a class="mdl-navigation__link" href="bemmdl4.html">Contact</a>
+                </nav>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                    <label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable">
+                        <i class="material-icons">search</i>
+                    </label>
+                    <div class="mdl-textfield__expandable-holder">
+                        <input class="mdl-textfield__input" type="text" id="search-expandable" />
+                        <label class="mdl-textfield__label" for="search-expandable">Search text</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Tabs -->
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Kittens</a>
+                <a href="#fixed-tab-2" class="mdl-layout__tab">Papies</a>
+            </div>
+        </header>
+
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Leniva</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="bemmdl.html">Home</a> <!--Как скравать некоторые пункты меню?-->
+                <a class="mdl-navigation__link" href="bemmdl2.html">Blog</a>
+                <a class="mdl-navigation__link" href="bemmdl3.html">About</a>
+                <a class="mdl-navigation__link" href="bemmdl4.html">Contact</a>
+                <a href="#" class="mdl-navigation__link">Products</a>
+                <a href="#" class="mdl-navigation__link">Services</a>
+                <a href="#" class="mdl-navigation__link">Portfolios</a>
+                <a href="#" class="mdl-navigation__link">Achievements</a>
+                <a href="#" class="mdl-navigation__link">Blog</a>
+            </nav>
+        </div>
+
+        <main class="mdl-layout__content">
+            <!-- Panel 1 -->
+            <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+                <div class="page-content">
+            <div class="content-grid mdl-grid">
+                <div class="mdl-cell mdl-card mdl-cell--4-col-tablet mdl-shadow--2dp"> <!--Этот способ позволяет создать отличный адаптивный плиточный макет!-->
+                    <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">What Do Cats Think About Us?</h2>
+                </div>
+                <div class="mdl-card__media">
+                    <img src="images/fairCat.jpg" alt="">
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenan convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read more</a>
+                    <div class="mdl-layout-spacer"></div>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                </div>
+                </div>
+
+                <div class="mdl-cell mdl-card mdl-cell--4-col-tablet mdl-shadow--2dp"> <!--Этот способ позволяет создать отличный адаптивный плиточный макет!-->
+                    <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">How kittens play</h2>
+                </div>
+                <div class="mdl-card__media">
+                    <img src="images/kittensFight.jpg" alt="">
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenan convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read more</a>
+                    <div class="mdl-layout-spacer"></div>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                </div>
+                </div>
+
+                <div class="mdl-cell mdl-card mdl-cell--4-col-tablet mdl-shadow--2dp"> <!--Этот способ позволяет создать отличный адаптивный плиточный макет!-->
+                    <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">How do kittens see their owners</h2>
+                </div>
+                <div class="mdl-card__media">
+                    <img src="images/kotenok.jpg" alt="">
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenan convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read more</a>
+                    <div class="mdl-layout-spacer"></div>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                </div>
+                </div>
+                
+                <div class="mdl-cell mdl-card mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp"> 
+                <!--Этот способ позволяет создать отличный адаптивный плиточный макет!-->
+                    <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">13+ Things You Didn't Know About kittens</h2>
+                </div>
+                <div class="mdl-card__media">
+                    <img src="images/cat206.jpg" alt="">
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenan convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read more</a>
+                    <div class="mdl-layout-spacer"></div>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                </div>
+                </div>
+
+                <div class="mdl-cell mdl-card mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp"> 
+                <!--Этот способ позволяет создать отличный адаптивный плиточный макет!-->
+                    <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Cat Communication</h2>
+                </div>
+                <div class="mdl-card__media">
+                    <img src="images/catAndDucks.jpg" alt="">
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenan convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read more</a>
+                    <div class="mdl-layout-spacer"></div>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                </div>
+                </div>
+
+                <div class="mdl-cell mdl-card mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp"> 
+                <!--Этот способ позволяет создать отличный адаптивный плиточный макет!-->
+                    <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">How kittens show they love you</h2>
+                </div>
+                <div class="mdl-card__media">
+                    <img src="images/catLap.jpg" alt="">
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenan convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read more</a>
+                    <div class="mdl-layout-spacer"></div>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                </div>
+                </div>
+
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                    <h2>Lorem ipsum.</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et dolorum impedit labore tenetur explicabo quis quisquam error, laudantium, magnam velit, rem quia porro ipsa ullam!</p>
+                </div>
+
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                        <h2>Lorem ipsum dolor.</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error vitae, a aliquam reiciendis laborum voluptatibus sunt deleniti, omnis assumenda vero nostrum unde soluta quidem ut necessitatibus labore quasi fugiat earum voluptatum. Laudantium ex quas impedit voluptate minima officiis, perspiciatis aperiam aliquid, molestiae, cumque consequuntur dolor quibusdam molestias quam. Nihil, aspernatur cumque accusamus, delectus saepe reprehenderit. Nemo adipisci, sequi amet natus iste laudantium quia saepe dolores ratione, aut ab voluptatum facere enim deleniti blanditiis molestiae consectetur cum, earum laborum. Nam recusandae voluptas repellat iusto perferendis aut placeat pariatur consequuntur harum deleniti, blanditiis debitis eveniet aliquam! Deserunt aliquam, in doloribus placeat totam pariatur suscipit repudiandae ullam reprehenderit voluptates explicabo, quas neque incidunt ex, cumque tenetur iste mollitia esse! Praesentium tempore autem aspernatur consequatur iure blanditiis aliquam suscipit recusandae, consequuntur ea voluptatibus sequi, fuga voluptatum eius quam atque facilis, laudantium, assumenda dolorem animi! Commodi beatae sapiente consectetur, deserunt voluptatibus saepe veniam harum dolorum.</p>
+                    </div>
+            </div>
+                </div>
+            </section>
+
+            <!-- Panel 2 -->
+            <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+                <div class="page-content">
+<div class="content-grid mdl-grid">
+                <div class="mdl-cell mdl-card mdl-cell--4-col-tablet mdl-shadow--2dp"> <!--Этот способ позволяет создать отличный адаптивный плиточный макет!-->
+                    <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Why puppies bite everything?</h2>
+                </div>
+                <div class="mdl-card__media">
+                    <img src="images/shhenyata.jpg" alt="">
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenan convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read more</a>
+                    <div class="mdl-layout-spacer"></div>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                </div>
+                </div>
+
+                <div class="mdl-cell mdl-card mdl-cell--4-col-tablet mdl-shadow--2dp"> <!--Этот способ позволяет создать отличный адаптивный плиточный макет!-->
+                    <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Stages of puppy development</h2>
+                </div>
+                <div class="mdl-card__media">
+                    <img src="images/hqdefault.jpg" alt="">
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenan convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read more</a>
+                    <div class="mdl-layout-spacer"></div>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                </div>
+                </div>
+
+                <div class="mdl-cell mdl-card mdl-cell--4-col-tablet mdl-shadow--2dp"> <!--Этот способ позволяет создать отличный адаптивный плиточный макет!-->
+                    <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">When do puppies open their eyes?</h2>
+                </div>
+                <div class="mdl-card__media">
+                    <img src="images/twoDogs.jpg" alt="">
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenan convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read more</a>
+                    <div class="mdl-layout-spacer"></div>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                </div>
+                </div>
+
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                    <h2>Lorem ipsum.</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et dolorum impedit labore tenetur explicabo quis quisquam error, laudantium, magnam velit, rem quia porro ipsa ullam!</p>
+                </div>
+                
+                <div class="mdl-cell mdl-card mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp"> 
+                <!--Этот способ позволяет создать отличный адаптивный плиточный макет!-->
+                    <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Why are babies and puppies so cute?</h2>
+                </div>
+                <div class="mdl-card__media">
+                    <img src="images/randDog.jpg" alt="">
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenan convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read more</a>
+                    <div class="mdl-layout-spacer"></div>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                </div>
+                </div>
+
+                <div class="mdl-cell mdl-card mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp"> 
+                <!--Этот способ позволяет создать отличный адаптивный плиточный макет!-->
+                    <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">All about puppies</h2>
+                </div>
+                <div class="mdl-card__media">
+                    <img src="images/threeHaski.jpg" alt="">
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenan convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read more</a>
+                    <div class="mdl-layout-spacer"></div>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                </div>
+                </div>
+
+                <div class="mdl-cell mdl-card mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp"> 
+                <!--Этот способ позволяет создать отличный адаптивный плиточный макет!-->
+                    <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">National puppy day</h2>
+                </div>
+                <div class="mdl-card__media">
+                    <img src="images/sixDogs.jpg" alt="">
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenan convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read more</a>
+                    <div class="mdl-layout-spacer"></div>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                </div>
+                </div>
+
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                        <h2>Lorem ipsum dolor.</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error vitae, a aliquam reiciendis laborum voluptatibus sunt deleniti, omnis assumenda vero nostrum unde soluta quidem ut necessitatibus labore quasi fugiat earum voluptatum. Laudantium ex quas impedit voluptate minima officiis, perspiciatis aperiam aliquid, molestiae, cumque consequuntur dolor quibusdam molestias quam. Nihil, aspernatur cumque accusamus, delectus saepe reprehenderit. Nemo adipisci, sequi amet natus iste laudantium quia saepe dolores ratione, aut ab voluptatum facere enim deleniti blanditiis molestiae consectetur cum, earum laborum. Nam recusandae voluptas repellat iusto perferendis aut placeat pariatur consequuntur harum deleniti, blanditiis debitis eveniet aliquam! Deserunt aliquam, in doloribus placeat totam pariatur suscipit repudiandae ullam reprehenderit voluptates explicabo, quas neque incidunt ex, cumque tenetur iste mollitia esse! Praesentium tempore autem aspernatur consequatur iure blanditiis aliquam suscipit recusandae, consequuntur ea voluptatibus sequi, fuga voluptatum eius quam atque facilis, laudantium, assumenda dolorem animi! Commodi beatae sapiente consectetur, deserunt voluptatibus saepe veniam harum dolorum.</p>
+                    </div>
+            </div>
+                </div>
+            </section>
+
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">Leniva</div>
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Privacy & Terms</a></li>
+                    </ul>
+                </div>
+                <div class="mdl-layout-spacer"></div>
+                <div class="mdl-mini-footer__right-section">
+                    <a title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                    <a title="Share on Google+" target="_blank" class="btn btn-googleplus"><i class="fa fa-google-plus"></i></a>
+                    <a title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i></a>
+                </div>
+            </footer>
+
+            <!--<div class="mdl-card mdl-shadow--2dp marginAuto">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Card title</h2>
+                </div>
+                <figure class="mdl-card__media">
+                    <img src="https://dl.dropboxusercontent.com/u/32494584/litter-card.jpg" alt="">
+                </figure>
+                <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenan convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read more</a>
+                    <div class="mdl-layout-spacer"></div>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                </div>
+            </div>
+
+            <div class="mdl-grid">
+                <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">-->
+                    <!--<figure class="mdl-card__media marginAuto">-->      <!--Не уловил разницу присутвия img и figure-->
+                        <!--<img src="images/kitties.jpg" alt="" /
+                    </figure>
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text">Learning Web Design</h1>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam accusamus, consectetur.</p>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read More</a>
+                        <div class="mdl-layout-spacer"></div>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                    </div>
+                </div>
+            </div>
+
+        <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
+            <main class="mdl-layout__content">
+                <form action="#">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                        <label class="mdl-button mdl-js-button mdl-button--icon" for="site-search">
+                                <i class="material-icons">search</i>
+                            </label>
+                            <div class="mdl-textfield__expandable-holder">
+                                <input class="mdl-textfield__input" type="search" id="site-search" />
+                                <label class="mdl-textfield__label" for="site-search">Search</label>
+                            </div>
+                        </div>
+                </form>
+            </main>
+        </div>-->
+
+        </main>
+
+
+    </div>
+    </div>
+    <script src="js/jquery-2.2.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
