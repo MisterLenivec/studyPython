@@ -27,10 +27,10 @@ while (flag):
 
 l, h = len(x), len(x[0])
 
-for i in range(len(x)):
+for i in range(l):
     if (i != 0):
         print()
-    for j in range(len(x[0])):
+    for j in range(h):
         sum = 0
         sum += int(x[i - 1][j])
         sum += int(x[i + 1 - l][j])
