@@ -5,7 +5,7 @@
 # > python3 my_solution.py arg1 arg2
 # arg1 arg2
 
-from ys import argv
+from sys import argv
 
 # first solution
 print(*argv[1:])
