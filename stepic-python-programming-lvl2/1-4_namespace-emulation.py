@@ -14,6 +14,7 @@
 # Формат выходных данных:
 # Для каждого запроса get выведите в отдельной строке его результат.
 
+# Recursion
 d = dict()
 d['global'] = {'parent': 'None'}
 def creating(nmsp, var):
@@ -45,3 +46,15 @@ def actionSelection(cmd, nmsp, var):
 for i in range(int(input())):
   cmd, nmsp, var = input().split()
   actionSelection(cmd, nmsp, var)
+
+# Cycle
+d = {'global': ['None']}
+for ops, nms, var in [input().split() for i in range(int(input()))]:
+  if (ops == 'create'):
+    d[nms] = [var]
+  elif (ops == 'add'):
+    d[nms].append(var)
+  else:
+    while (nms != 'None' and var not in d[nms]):
+      nms = d[nms][0]
+    print(nms)
