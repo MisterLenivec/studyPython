@@ -76,3 +76,36 @@ for i in range(int(input())):
 for i in range(int(input())):
     check = input().split()
     print(az(graph, check[1], check[0]))
+
+# Second
+graph = {}
+
+def graphSearch(parent, child):
+    if (parent == child or parent in graph[child]):
+        return 'Yes'
+    for node in graph[child]:
+        if (graphSearch(parent, node) == 'Yes'):
+            return 'Yes'
+    return 'No'
+
+for points in [input().split() for i in range(int(input()))]:
+    graph[points[0]] = points[2:]
+for points in [input().split() for i in range(int(input()))]:
+    print (graphSearch(points[0], points[1]))
+
+# Third Подглядел часть программы, но очень уж понравилось решение, оставлю, вдруг пригодится :)
+graph = {}
+
+def find_path(start, path):
+    path.add(start)
+    for node in graph[start]:
+        if node not in path:
+            find_path(node, path)
+
+for points in [input().split() for i in range(int(input()))]:
+    graph[points[0]] = points[2:] if len(points) > 1 else [points[0]]
+
+for points in [input().split() for i in range(int(input()))]:
+    path = set()
+    find_path(points[1], path)
+    print('Yes' if points[0] in path else 'No')
