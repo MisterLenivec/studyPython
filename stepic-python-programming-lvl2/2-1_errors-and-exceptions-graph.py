@@ -77,3 +77,44 @@ for points in [input().replace(' ', '') for i in range(int(input()))]:
 
 for x in nope:
     print(x)
+
+# Second
+d = {}
+exceptions = []
+
+def isParent(d, parent, child):
+    # return parent == child or any([isParent(d, parent, p) for p in d[child] if p])
+    if (parent == child):
+        return True
+    else:
+        for p in d[child]:
+            if (isParent(d, parent, p)):
+                return True
+        return False
+
+for i in range(int(input())):
+    s = input().split()
+    d.setdefault(s[0], set(s[2:]))
+
+for i in range(int(input())):
+    exceptions.append(input())
+    if (any([isParent(d, x, exceptions[-1]) for x in exceptions[:-1]])):
+        print(exceptions[-1])
+
+# Third, интересное решение через цикл
+d = dict()
+err = list()
+for points in [input().split() for i in range(int(input()))]:
+    d[points[0]] = points[2:]
+
+for points in [input() for i in range(int(input()))]:
+    r = d[points]
+    while True:
+        if (r == []):
+            break
+        p = r.pop()
+        if (p in err):
+            print(points)
+            break
+        r.extend(d[p])
+    err.append(points)
