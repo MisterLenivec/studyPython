@@ -19,3 +19,10 @@ plus_day = datetime.timedelta(days=int(input()))
 days_later = date_now + plus_day
 print(days_later.strftime('%Y %-m %-d'))
 # print(days_later.strftime('%Y %#m %#d')) # Для винды убираем нули из месяца и дня
+
+# Second
+from datetime import datetime, timedelta
+
+y, m, d = map(int, input().split())
+new_date = datetime(y, m, d) + timedelta(days=int(input()))
+print('{d.year} {d.month} {d.day}'.format(d=new_date))
