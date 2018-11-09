@@ -8,10 +8,11 @@ import os
 abc = set()
 os.chdir("main")
 
-for current_dir, dirs, files in os.walk("."):
-    for file in files:
-        if (file.endswith('.py')):
-            abc.add(current_dir[2:])
+abc = {current_dir[2:] for current_dir, dirs, files in os.walk(".") for file in files if (file.endswith('.py'))}
+# for current_dir, dirs, files in os.walk("."):
+#     for file in files:
+#         if (file.endswith('.py')):
+#             abc.add(current_dir[2:])
 
 with open("main.txt", "w") as w:
     line = [i.strip() for i in sorted(abc)]
