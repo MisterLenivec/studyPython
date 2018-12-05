@@ -47,4 +47,4 @@ for i in range(len(x)):
             print(sum, end='')
         else:
             print('*', end='')
-# print()
+print()
